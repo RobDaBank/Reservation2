@@ -8,7 +8,7 @@
         <h1 class="display-2 font-weight-bold mb-3">Reservation the Field</h1>
       </v-flex>
     </v-layout>
-
+    
     <v-row justify="center">
       <v-col cols="4">
         <v-form v-model="valid" ref="form">
@@ -30,7 +30,6 @@
             </v-col>
           </v-row>
 
-          <!-- <div v-if="customerCheck"> -->
             <v-row>
               <v-col cols="10">
                 <v-select
@@ -48,24 +47,23 @@
             <v-row justify="center">
               <v-col cols="20">
                 <v-menu
-                  ref="menu"
-                  v-model="menu"
-                  :close-on-content-click="false"
-                  :return-value.sync="date"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                  >
-                  <template v-slot:activator="{ on }">
-                    <v-text-field
-                      v-model="date"
-                      label="เลือกวันที่"
-                      readonly
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker v-model="date" @input="menu = false"></v-date-picker>
-                </v-menu>
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        transition="scale-transition"
+        offset-y
+        min-width="290px"
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="date"
+            label="เลือกวันที่"
+            readonly
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker v-model="date" @input="menu = false"></v-date-picker>
+      </v-menu>
                 <p>เวลา : {{date}}</p>
               </v-col>
             </v-row>
@@ -90,7 +88,6 @@
               </v-col>
             </v-row>
             <br />
-          <!-- </div> -->
         </v-form>
       </v-col>
     </v-row>
@@ -161,15 +158,25 @@ export default {
         });
       this.submitted = true;
     },
+    zipData(cus, field, times, val) {
+      let datazip = {
+        customerId: cus,
+        fieldcateId: field,
+        timeableId: times,
+        date: val
+      };
+      return datazip;
+    },
     saveReservation() {
       http
-        .post("/reservation/" +
-            this.reservation.customerId +
-            "/" +
-            this.reservation.fieldcategoryId +
-            "/" +
-            this.reservation.timetableId,
-          this.reservation
+        .post(
+          "/reservation/create",
+          this.zipData(
+            Number(this.reservation.customerId),
+            Number(this.reservation.fieldcategoryId),
+            Number(this.reservation.timetableId),
+            this.date
+          )
         )
         .then(response => {
           console.log(response);
