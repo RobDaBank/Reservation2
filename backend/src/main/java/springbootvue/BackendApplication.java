@@ -21,9 +21,9 @@ public class BackendApplication {
 	ApplicationRunner init(CustomerRepository customerRepository,FieldCategoryRepository fieldcategoryRepository, TimeTableRepository timetableRepository, EmployeeRepository employeeRepository) {
 		return args -> {
 			// Customers name 
-			Stream.of("ธนาธร", "ประยุทธ์", "ประวิตร", "ชวน").forEach(name -> {
+			Stream.of("ธนาธร", "ประยุทธ์", "ประวิตร", "ชวน").forEach(customername -> {
 				Customer customer = new Customer(); 
-				customer.setName(name); 
+				customer.setCustomername(customername); 
 				customerRepository.save(customer); 
 			});
 			// FieldType field
@@ -39,9 +39,9 @@ public class BackendApplication {
 				timetableRepository.save(timetable); 
 			});
 			// Employee name
-			Stream.of("ตั๊ก", "ชมพู่", "แบงค์", "ตาล", "เบน", "หนุน").forEach(name -> {
+			Stream.of("ตั๊ก", "ชมพู่", "แบงค์", "ตาล", "เบน", "หนุน").forEach(employeename -> {
 				Employee employee = new Employee(); 
-				employee.setName(name); 
+				employee.setEmployeename(employeename); 
 				employeeRepository.save(employee); 
 			});
 

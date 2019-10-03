@@ -3,7 +3,7 @@
     <b-layout text-center wrap>
       <b-flex mb-4>
         <br />
-        <h1 class="display-2 font-weight-bold mb-3">Field Reservation </h1>
+        <h1 class="display-2 font-weight-bold mb-3">บันทึกเสร็จสิ้น</h1>
       </b-flex>
     </b-layout>
     <b-row justify="center">

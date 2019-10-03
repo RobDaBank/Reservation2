@@ -37,8 +37,8 @@
                   outlined
                   v-model="reservation.employeeId"
                   :items="employee"
-                  item-text="name"
-                  item-value="id"
+                  item-text="employeename"
+                  item-value="employeeid"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
                 ></v-select>
@@ -53,7 +53,7 @@
                   v-model="reservation.fieldcategoryId"
                   :items="fieldCategory"
                   item-text="field"
-                  item-value="id"
+                  item-value="fieldid"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
                 ></v-select>
@@ -71,13 +71,13 @@
       >
         <template v-slot:activator="{ on }">
           <v-text-field
-            v-model="date"
+            v-model="reservedate"
             label="เลือกวันที่จองสนาม"
             readonly
             v-on="on"
           ></v-text-field>
         </template>
-        <v-date-picker v-model="date" @input="menu = false"></v-date-picker>
+        <v-date-picker v-model="reservedate" @input="menu = false"></v-date-picker>
       </v-menu>
 
               </v-col>
@@ -90,7 +90,7 @@
                   v-model="reservation.timetableId"
                   :items="timeTable"
                   item-text="timeString"
-                  item-value="id"
+                  item-value="timetableid"
                   :rules="[(v) => !!v || 'Item is required']"
                   required
                 ></v-select>
@@ -119,7 +119,7 @@ export default {
     },
    data () {
     return { 
-      date: new Date().toISOString().substr(0, 10),
+      reservedate: new Date().toISOString().substr(0, 10),
       menu: false,
        reservation: {
         customerId: "",
@@ -174,7 +174,7 @@ export default {
         .then(response => {
           console.log(response);
           if (response.data != null) {
-            this.customerName = response.data.name;
+            this.customerName = response.data.customername;
             this.customerCheck = response.status;
           } else {
             this.clear()
@@ -191,7 +191,7 @@ export default {
         fieldcateId: field,
         timeableId: times,
         employeeId: emp,
-        date: val
+        reservedate: val
       };
       return datazip;
     },
@@ -204,7 +204,7 @@ export default {
             Number(this.reservation.fieldcategoryId),
             Number(this.reservation.timetableId),
             Number(this.reservation.employeeId),
-            this.date
+            this.reservedate
           )
         )
         .then(response => {
@@ -215,6 +215,7 @@ export default {
           console.log(e);
         });
       this.submitted = true;
+       alert("55");
     },
     clear() {
       this.$refs.form.reset();

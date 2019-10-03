@@ -104,16 +104,16 @@ public class ReservationController {
         System.out.println();
 
         Reservation newReservation = new Reservation();
-        Customer customer = customerRepository.findById(C);
-        FieldCategory fieldcategory = fieldcategoryRepository.findById(F);
-        TimeTable timetable = timetableRepository.findById(T);
-        Employee employee = employeeRepository.findById(E);
+        Customer customer = customerRepository.findByCustomerid(C);
+        FieldCategory fieldcategory = fieldcategoryRepository.findByFieldid(F);
+        TimeTable timetable = timetableRepository.findByTimetableid(T);
+        Employee employee = employeeRepository.findByEmployeeid(E);
 
         newReservation.setCustomer(customer);
         newReservation.setFieldcategory(fieldcategory);
         newReservation.setTimetable(timetable);
         newReservation.setEmployee(employee);
-        newReservation.setDate(ResCriDTo.getDate());
+        newReservation.setReservedate(ResCriDTo.getReservedate());
 
         return reservationRepository.save(newReservation);
     }

@@ -20,7 +20,7 @@ public class FieldCategory {
     @SequenceGenerator(name="FieldCategory_seq",sequenceName="FieldCategory_seq")               
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="FieldCategory_seq")  
     @Column(name = "FIELDCATEGORY_ID", unique = true, nullable = true)
-    private @NonNull Long id;
+    private @NonNull Long fieldid;
     private @NonNull String field;
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Reservation> reservations;

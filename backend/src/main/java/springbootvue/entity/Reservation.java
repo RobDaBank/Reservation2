@@ -25,7 +25,7 @@ public class Reservation {
     @SequenceGenerator(name="Reservation_seq",sequenceName="Reservation_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Reservation_seq")
     @Column(name = "RESERVATION_ID", unique = true, nullable = true)
-    private @NonNull Long id;
+    private @NonNull Long reservationid;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = Customer.class)
     @JoinColumn(name = "CUSTOMER_ID", insertable = true)
@@ -42,7 +42,7 @@ public class Reservation {
     @Temporal(TemporalType.DATE)
     @Column(name="RESERVE_DATE")
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date date;
+    private Date reservedate;
 
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = TimeTable.class)
     @JoinColumn(name = "TIMETABLE_ID", insertable = true)

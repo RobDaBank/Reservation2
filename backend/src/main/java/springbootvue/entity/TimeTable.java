@@ -19,7 +19,7 @@ public class TimeTable {
     @SequenceGenerator(name="TimeTable_seq",sequenceName="TimeTable_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="TimeTable_seq")
     @Column(name="TIME_ID",unique = true, nullable = true)
-    private @NonNull Long id;
+    private @NonNull Long timetableid;
     private @NonNull String timeString;
     @OneToMany(fetch = FetchType.EAGER)
     private Collection<Reservation> reservations;

@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface TimeTableRepository extends JpaRepository<TimeTable, Long> {
-    TimeTable findById(long id );
+    TimeTable findByTimetableid(Long timetableid );
 }

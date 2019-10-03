@@ -12,6 +12,6 @@ public class ReservationCriteraDTO {
     private Long fieldcateId;
     private Long timeableId;
     private Long employeeId;
-    private Date date;
+    private Date reservedate;
 
 }

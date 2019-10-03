@@ -19,8 +19,12 @@ public class Customer {
 	@SequenceGenerator(name="Customer_seq",sequenceName="Customer_seq")
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="Customer_seq")
 	@Column(name="CUSTOMER_ID",unique = true, nullable = true)
-	private @NonNull Long id;
-	private @NonNull String name;
+	private @NonNull Long customerid;
+    private @NonNull String customername;
+    private @NonNull String address;
+    private @NonNull String telephone;
+    private @NonNull String username;
+    private @NonNull String password;
 	@OneToMany(fetch = FetchType.EAGER)
 	private Collection<Reservation> reservations;
 }
