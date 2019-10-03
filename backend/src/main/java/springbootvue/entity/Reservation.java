@@ -31,6 +31,10 @@ public class Reservation {
     @JoinColumn(name = "CUSTOMER_ID", insertable = true)
     private Customer customer;
 
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Employee.class)
+    @JoinColumn(name = "EMPLOYEE_ID", insertable = true)
+    private Employee employee;
+
     @ManyToOne(fetch = FetchType.EAGER, targetEntity = FieldCategory.class)
     @JoinColumn(name = "FIELDCATEGORY_ID", insertable = true)
     private FieldCategory fieldcategory;

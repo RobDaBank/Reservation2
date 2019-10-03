@@ -37,13 +37,16 @@ public class ReservationController {
     private CustomerRepository customerRepository;
     @Autowired
     private TimeTableRepository timetableRepository;
+    @Autowired
+    private EmployeeRepository employeeRepository;
 
     public ReservationController(ReservationRepository reservationRepository, CustomerRepository customerRepository,
-            FieldCategoryRepository fieldcategoryRepository, TimeTableRepository timetableRepository) {
+            FieldCategoryRepository fieldcategoryRepository, TimeTableRepository timetableRepository,EmployeeRepository employeeRepository) {
         this.reservationRepository = reservationRepository;
         this.customerRepository = customerRepository;
         this.fieldcategoryRepository = fieldcategoryRepository;
         this.timetableRepository = timetableRepository;
+        this.employeeRepository = employeeRepository;
     }
 
     // Customer
@@ -56,6 +59,11 @@ public class ReservationController {
     public Optional<Customer> Customers(@PathVariable Long id) {
         Optional<Customer> customer = customerRepository.findById(id);
         return customer;
+    }
+    // Employee
+    @GetMapping("/employee")
+    public Collection<Employee> Employee() {
+        return employeeRepository.findAll().stream().collect(Collectors.toList());
     }
 
     // FieldCategoty
@@ -82,12 +90,15 @@ public class ReservationController {
         System.out.println();
         System.out.println();
         System.out.println();
+        System.out.println();
         System.out.println(ResCriDTo);
 
         long C = ResCriDTo.getCustomerId();
         long F = ResCriDTo.getFieldcateId();
         long T = ResCriDTo.getTimeableId();
+        long E = ResCriDTo.getEmployeeId();
 
+        System.out.println();
         System.out.println();
         System.out.println();
         System.out.println();
@@ -96,10 +107,12 @@ public class ReservationController {
         Customer customer = customerRepository.findById(C);
         FieldCategory fieldcategory = fieldcategoryRepository.findById(F);
         TimeTable timetable = timetableRepository.findById(T);
+        Employee employee = employeeRepository.findById(E);
 
         newReservation.setCustomer(customer);
         newReservation.setFieldcategory(fieldcategory);
         newReservation.setTimetable(timetable);
+        newReservation.setEmployee(employee);
         newReservation.setDate(ResCriDTo.getDate());
 
         return reservationRepository.save(newReservation);

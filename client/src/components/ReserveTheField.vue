@@ -5,7 +5,7 @@
     <v-layout text-center wrap>
       <v-flex mb-4>
         <br />
-        <h1 class="display-2 font-weight-bold mb-3">Reservation the Field</h1>
+        <h1 class="display-2 font-weight-bold mb-3">แบบฟอร์มบันทึกการจองสนามกีฬา</h1>
       </v-flex>
     </v-layout>
     
@@ -16,7 +16,7 @@
             <v-col cols="10">
               <v-text-field
                 outlined
-                label="ID ผู้ให้บริการ"
+                label="ID ผู้ใช้บริการ"
                 v-model="reservation.customerId"
                 :rules="[(v) => !!v || 'Item is required']"
                 required
@@ -30,10 +30,25 @@
             </v-col>
           </v-row>
 
+          <v-row>
+              <v-col cols="10">
+                <v-select
+                  label="พนักงานที่ทำรายการ"
+                  outlined
+                  v-model="reservation.employeeId"
+                  :items="employee"
+                  item-text="name"
+                  item-value="id"
+                  :rules="[(v) => !!v || 'Item is required']"
+                  required
+                ></v-select>
+              </v-col>
+            </v-row>
+
             <v-row>
               <v-col cols="10">
                 <v-select
-                  label="ประเภทสนาม"
+                  label="เลือกประเภทสนาม"
                   outlined
                   v-model="reservation.fieldcategoryId"
                   :items="fieldCategory"
@@ -57,20 +72,20 @@
         <template v-slot:activator="{ on }">
           <v-text-field
             v-model="date"
-            label="เลือกวันที่"
+            label="เลือกวันที่จองสนาม"
             readonly
             v-on="on"
           ></v-text-field>
         </template>
         <v-date-picker v-model="date" @input="menu = false"></v-date-picker>
       </v-menu>
-                <p>เวลา : {{date}}</p>
+
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="10">
                 <v-select
-                  label="เลือกเวลา"
+                  label="เลือกเวลาจองสนาม"
                   outlined
                   v-model="reservation.timetableId"
                   :items="timeTable"
@@ -109,7 +124,8 @@ export default {
        reservation: {
         customerId: "",
         fieldcategoryId: "",
-        timetableId: ""
+        timetableId: "",
+        employeeId: ""
       },
       valid: false,
       customerCheck: false,
@@ -124,6 +140,17 @@ export default {
         .get("/fieldcate")
         .then(response =>{
             this.fieldCategory = response.data;
+            console.log(response.data)
+        })
+        .catch(e => {
+            console.log(e);
+        })
+    },
+    employee(){
+      http
+        .get("/employee")
+        .then(response =>{
+            this.employee = response.data;
             console.log(response.data)
         })
         .catch(e => {
@@ -158,11 +185,12 @@ export default {
         });
       this.submitted = true;
     },
-    zipData(cus, field, times, val) {
+    zipData(cus, field, times, emp, val) {
       let datazip = {
         customerId: cus,
         fieldcateId: field,
         timeableId: times,
+        employeeId: emp,
         date: val
       };
       return datazip;
@@ -175,6 +203,7 @@ export default {
             Number(this.reservation.customerId),
             Number(this.reservation.fieldcategoryId),
             Number(this.reservation.timetableId),
+            Number(this.reservation.employeeId),
             this.date
           )
         )
@@ -194,12 +223,14 @@ export default {
     refreshList() {
       this.fieldCategory();
       this.timeTable();
+      this.employee();
     }
     /* eslint-enable no-console */
   },
   mounted() {
       this.fieldCategory();
       this.timeTable();
+      this.employee();
   }
 }
 </script>
