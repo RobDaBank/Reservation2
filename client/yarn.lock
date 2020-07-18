@@ -4984,9 +4984,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@^2.2.0:
   version "2.2.0"
@@ -8102,10 +8102,10 @@ vue-cli-plugin-vuetify@^0.6.3:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-0.6.3.tgz#71d956cdec419f5628d2b44c43bdc1e6ec3356bf"
   integrity sha512-bdbJcNIc8rrXX1KUiA/7H5mbq6hnjics+k0Q9qdWrX9DjXkGDd+kWhbk9pAIfAZgyHkgGxsgMXF4QhpMMYBiFg==
 
-vue-dropdown-datepicker@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-dropdown-datepicker/-/vue-dropdown-datepicker-1.1.0.tgz#b3406f8fee63ccb35bfe0b7f30fe87913531a7d1"
-  integrity sha512-1XYA0Qd4YbV8Xg9s5rP+i9MJUV3LmwWWNouyysX8/hyw5P62oP47HJhiuC0eqoEZf0OBRL4eIAWMv9l8wbjXGQ==
+vue-date-dropdown@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue-date-dropdown/-/vue-date-dropdown-1.0.5.tgz#370939d99db3386d5e67ed6cacc60fa918c90c7c"
+  integrity sha512-RQpnV/7/Kg7aLG2g1kmIKvp5C8GhURlpbiiRnXd6PucbjGtTBVj6ZafGAIKN7c7QWcPQuIByKImaMwaUf5M5uA==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
