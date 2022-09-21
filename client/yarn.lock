@@ -8102,10 +8102,10 @@ vue-cli-plugin-vuetify@^0.6.3:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-0.6.3.tgz#71d956cdec419f5628d2b44c43bdc1e6ec3356bf"
   integrity sha512-bdbJcNIc8rrXX1KUiA/7H5mbq6hnjics+k0Q9qdWrX9DjXkGDd+kWhbk9pAIfAZgyHkgGxsgMXF4QhpMMYBiFg==
 
-vue-dropdown-datepicker@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-dropdown-datepicker/-/vue-dropdown-datepicker-1.1.0.tgz#b3406f8fee63ccb35bfe0b7f30fe87913531a7d1"
-  integrity sha512-1XYA0Qd4YbV8Xg9s5rP+i9MJUV3LmwWWNouyysX8/hyw5P62oP47HJhiuC0eqoEZf0OBRL4eIAWMv9l8wbjXGQ==
+vue-date-dropdown@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue-date-dropdown/-/vue-date-dropdown-1.0.5.tgz#370939d99db3386d5e67ed6cacc60fa918c90c7c"
+  integrity sha512-RQpnV/7/Kg7aLG2g1kmIKvp5C8GhURlpbiiRnXd6PucbjGtTBVj6ZafGAIKN7c7QWcPQuIByKImaMwaUf5M5uA==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
@@ -8192,10 +8192,10 @@ vuetify-loader@^1.2.2:
   dependencies:
     loader-utils "^1.2.0"
 
-vuetify@^2.0.0:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.0.9.tgz#8b33393e530261d77224b808f37d590b8cf21bad"
-  integrity sha512-cXtsJXQT7pdkyojRkWoPi8PixQGbdUEkpWYaPamrxd33eLoOvLr7vIFN2tRERuB8nTBkgKiCHh2/ml/l0s/gDg==
+vuetify@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.10.tgz#b86cd7a97bf8cd3828a72c349795b5b3c539ebc2"
+  integrity sha512-fgUeRDDCwYkwu6WGEEKGe7IdfzOsXJCZGrqkn1pcS2ycuoDL8mR2/dejH5iFNnBY6MnsT365PAGn0J+9otjfQg==
 
 watchpack@^1.5.0:
   version "1.6.0"
