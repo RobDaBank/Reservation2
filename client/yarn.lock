@@ -2660,9 +2660,9 @@ decamelize@^1.2.0:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.0.1"
@@ -8102,10 +8102,10 @@ vue-cli-plugin-vuetify@^0.6.3:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-0.6.3.tgz#71d956cdec419f5628d2b44c43bdc1e6ec3356bf"
   integrity sha512-bdbJcNIc8rrXX1KUiA/7H5mbq6hnjics+k0Q9qdWrX9DjXkGDd+kWhbk9pAIfAZgyHkgGxsgMXF4QhpMMYBiFg==
 
-vue-dropdown-datepicker@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-dropdown-datepicker/-/vue-dropdown-datepicker-1.1.0.tgz#b3406f8fee63ccb35bfe0b7f30fe87913531a7d1"
-  integrity sha512-1XYA0Qd4YbV8Xg9s5rP+i9MJUV3LmwWWNouyysX8/hyw5P62oP47HJhiuC0eqoEZf0OBRL4eIAWMv9l8wbjXGQ==
+vue-date-dropdown@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue-date-dropdown/-/vue-date-dropdown-1.0.5.tgz#370939d99db3386d5e67ed6cacc60fa918c90c7c"
+  integrity sha512-RQpnV/7/Kg7aLG2g1kmIKvp5C8GhURlpbiiRnXd6PucbjGtTBVj6ZafGAIKN7c7QWcPQuIByKImaMwaUf5M5uA==
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
